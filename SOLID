@@ -1,0 +1,86 @@
+SOLID Design Principles Questions
+
+class Animal {
+ public void move() {
+ System.out.println("Animal moves");
+ }
+}
+
+class Bird extends Animal {
+ @Override
+ public void move() {
+ System.out.println("Bird flies");
+ }
+}
+
+Does this Java code violate the Liskov Substitution Principle?
+A) Yes, because Bird changes the behavior of move().
+B) No, because Bird is correctly substitutable for Animal.
+C) Yes, because the move() method is overridden.
+D) No, because overriding a method does not violate LSP.
+
+
+The correct answer is:
+
+B) No, because Bird is correctly substitutable for Animal.
+
+Explanation:
+The Liskov Substitution Principle (LSP) states that objects of a superclass should be replaceable with objects of a subclass without affecting the correctness of the program. In other words, if Bird is a subclass of Animal, then anywhere an Animal is expected, a Bird should be able to be used without breaking the program.
+
+In this case, the Bird class overrides the move() method of the Animal class, but it still adheres to the expected behavior of the move() method—it just provides a more specific implementation. The fact that Bird "flies" instead of just "moves" does not violate LSP, as a Bird is still an Animal, and it still "moves," albeit in a different way. The substitution of Bird for Animal does not break the program’s logic.
+
+Incorrect Answers:
+A) Yes, because Bird changes the behavior of move().
+This is incorrect because changing the behavior through method overriding is not inherently a violation of LSP as long as the subclass is still substitutable for the superclass.
+
+C) Yes, because the move() method is overridden.
+This is incorrect because overriding a method does not violate LSP as long as the subclass still satisfies the contract of the superclass.
+
+D) No, because overriding a method does not violate LSP.
+This is a partially correct statement, but the more precise reason is that the Bird class is still substitutable for Animal, which aligns with option B.
+
+
+Question 1: Single Responsibility Principle (SRP)
+Which of the following scenarios violates the Single Responsibility Principle?
+
+A) A class Invoice that handles both the data related to an invoice and the printing of the invoice.
+B) A class Customer that manages customer data and communicates with the customer via email.
+C) A class Report that generates various types of reports like PDF and Excel.
+D) All of the above.
+
+
+Question 2: Open/Closed Principle (OCP)
+Which statement best describes a violation of the Open/Closed Principle?
+
+A) A method in a class is made public so it can be used by other classes.
+B) A class requires modification to add new functionality for a specific feature.
+C) A subclass overrides a method of its superclass to provide a new behavior.
+D) An interface is implemented by multiple classes with different behaviors.
+
+Question 3: Interface Segregation Principle (ISP)
+Which scenario best demonstrates adherence to the Interface Segregation Principle?
+
+A) An interface Printer that has methods print(), scan(), and fax(), implemented by a class AdvancedPrinter.
+B) A class MultiFunctionPrinter implements separate interfaces for Printer, Scanner, and Fax.
+C) An interface Machine with methods print(), scan(), and fax(), implemented by a class OfficeMachine.
+D) A class PrinterMachine implements a single Device interface that includes methods for printing, scanning, and faxing.
+
+Question 4: Dependency Inversion Principle (DIP)
+Which of the following is an example of violating the Dependency Inversion Principle?
+
+A) A high-level module depends on an abstraction, not a concrete implementation.
+B) A high-level module directly depends on a low-level module, with no interface or abstraction in between.
+C) A high-level module uses an interface to interact with a low-level module.
+D) A low-level module depends on an interface defined by a high-level module.
+
+Question 5: Liskov Substitution Principle (LSP)
+Which of the following scenarios violates the Liskov Substitution Principle?
+
+A) A subclass overrides a method of its superclass to provide a more specific behavior.
+B) A subclass changes the return type of a method from void to an int in a way that is incompatible with the superclass.
+C) A subclass adds a new method that is not present in the superclass.
+D) A subclass overrides a method and then calls the superclass version of the method within it.
+
+
+
+
